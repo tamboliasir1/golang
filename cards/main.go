@@ -3,9 +3,7 @@ package main
 func main() {
 	cards := newDeck()
 
-	cards.print()
-}
+	cards.shuffle()
 
-func newCard() string {
-	return "Ace of cards"
+	cards.print()
 }
