@@ -15,8 +15,8 @@ type deck []string
 func newDeck() deck {
 	cards := deck{}
 
-	cardsuits := []string{"Daimonds", "Spades", "Hearts", "Clubs"}
-	cardValues := []string{"Ace", "two", "three", "four"}
+	cardsuits := []string{"Ace", "Two", "Three", "Four"}
+	cardValues := []string{"Daimonds", "Spades", "Hearts", "Clubs"}
 
 	for _, suits := range cardsuits {
 		for _, values := range cardValues {
@@ -47,7 +47,7 @@ func (d deck) saveToFile(filename string) error {
 }
 
 func newDeckFromFile(filename string) deck {
-	bs, err := ioutil.ReadFile("myCards.txt")
+	bs, err := ioutil.ReadFile(filename)
 	if err != nil {
 		fmt.Println("Error:", err)
 		os.Exit(1)
